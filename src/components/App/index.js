@@ -3,6 +3,7 @@ import Header from '../Header'
 import TodoList from '../TodoList'
 import NewTodo from '../NewTodo';
 import uuid from 'uuid';
+import Filter from '../Filter';
 
 
 class App extends Component { 
@@ -15,6 +16,7 @@ class App extends Component {
               { id: uuid(), content: 'Learn React', completed: false}, 
               { id: uuid(), content: 'Learn Redux', completed: true}
             ],
+            filter: 'all',
         };
     };
 
@@ -55,6 +57,7 @@ class App extends Component {
             changeCompleted={ this.changeCompleted } 
             deleteTodo={ this.deleteTodo } 
             todos={ this.state.todos }/> 
+            <Filter />
         </div>
         )
     }
