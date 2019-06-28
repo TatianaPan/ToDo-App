@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import TodoList from '../TodoList'
 import './index.css' 
+import {connect} from 'react-redux'
 
 class TodoItem extends Component {
 
@@ -15,4 +16,4 @@ class TodoItem extends Component {
 }
 
 
-export default TodoItem;
+export default connect()(TodoItem);
