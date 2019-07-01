@@ -27,7 +27,7 @@ class TodoList extends Component{
   }
  
 
-  const mapStateToProps = state => {
+const mapStateToProps = state => {
     
     return {
         todos: state.todos
