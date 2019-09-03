@@ -22,15 +22,11 @@ const todoReducer = (state = initialState, action) => {
         completed: false
       }
       const newArray = newTodos.concat(newTodo);
-      // const newTodos = newState.concat({
-      //   id: uuid(),
-      //   content: action.payload,
-      //   completed: false
-      // });
+    
       
       return {...state,
         todos: newArray};
-    }
+    };
 
     case 'DELETE_TODO': {
       const newTodoList = [...state.todos];
@@ -62,37 +58,8 @@ const todoReducer = (state = initialState, action) => {
         filter: action.payload
       }
 
-      // if (action.payload === 'all') {
-      //   const newState = {...state};
-      //   const todoList = [...state.todos];
-      //   console.log(todoList)
-      //   return {
-      //     ...newState,
-      //     filter: 'all',
-      //     filteredTodos: todoList
-      //   }
-      }
-      // if (action.payload === 'completed') {
-      //   const newState = {...state};
-      //   const todoList = [...state.todos];
-      //   const filteredTodos = todoList.filter(todo => todo.completed === true);
-      //   return {
-      //     ...newState,
-      //     filter: 'completed',
-      //     filteredTodos: filteredTodos
-      //   }
-      // } 
-    //   if (action.payload === 'pending') {
-    //     const newState = {...state};
-    //     const todoList = [...state.todos];
-    //     const filteredTodos = todoList.filter(todo => todo.completed === false);
-    //     return {
-    //       ...newState,
-    //       filter: 'pending',
-    //       filtered: filteredTodos
-    //     }
-    //   }
-    // }
+    }
+     
     
     default:
       return state;
