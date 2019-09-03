@@ -16,8 +16,8 @@ class TodoList extends Component{
                 key={ todo.id } 
                 todo={ todo } 
                 id={ todo.id }
-                // changeCompleted={ this.props.changeCompleted }
-                // deleteTodo={ this.props.deleteTodo }
+                //changeCompleted={ this.props.changeCompleted }
+                //deleteTodo={ this.props.deleteTodo }
                 />
             })
          }
@@ -27,18 +27,17 @@ class TodoList extends Component{
   }
  
 
-const mapStateToProps = state => {
+// const mapStateToProps = state => {
     
-    return {
-        todos: state.todos
-    }
-}
+//     return {
+//         todos: state.todoReducer.todos
+//     }
+// }
 
 
 // const connection = connect(mapStateToProps);
 
 // const ConnectedTodoList = connection(TodoList);
 
-export default connect(mapStateToProps)(TodoList); 
+export default connect()(TodoList); 
   
-//export default TodoList; 

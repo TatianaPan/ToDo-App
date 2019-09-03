@@ -4,71 +4,32 @@ import TodoList from '../TodoList'
 import NewTodo from '../NewTodo';
 //import uuid from 'uuid';
 import Filter from '../Filter';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import './index.css'
 
 
 class App extends Component { 
-    // state = {
-    //     todos: [
-    //         { id: uuid(), content: 'Master JS', completed: false}, 
-    //         { id: uuid(), content: 'Learn React', completed: false}, 
-    //         { id: uuid(), content: 'Learn Redux', completed: true}
-    //       ],
-    //       filter: 'all',
-    // };
-    // constructor(props) {
-    //     super(props); 
-    
-    //     this.state = {
-    //       todos: [
-    //           { id: uuid(), content: 'Master JS', completed: false}, 
-    //           { id: uuid(), content: 'Learn React', completed: false}, 
-    //           { id: uuid(), content: 'Learn Redux', completed: true}
-    //         ],
-    //         filter: 'all',
-    //     };
-    // };
 
-    // addTodo = ({ content, completed }) => {
-    //     const newItem = {
-    //         id: uuid(),
-    //         content,
-    //         completed
-    //     };
-    //     const todos = [...this.state.todos];
-    //     const newTodos = todos.concat(newItem);
-    //     this.setState({todos: newTodos})
-    // };
-
-    changeCompleted = (e, id) => {
-        const newTodos = [...this.state.todos];
-        const todoIndex = newTodos.findIndex(todo => todo.id === id);
-        const todo = { ...this.state.todos[todoIndex] };
-        todo.completed = !todo.completed;
-        newTodos[todoIndex] = todo;
-        this.setState({todos: newTodos});
-    };
-    
-
-    deleteTodo = id => {
-        const newTodos = [...this.state.todos];
-        const todoIndex = newTodos.findIndex(todo => todo.id === id);
-        newTodos.splice(todoIndex, 1);
-        this.setState({ todos: newTodos})
+    filteredTodos = () => {
+        return this.props.todos.filter(todo => {
+            if (this.props.filter === 'all') {
+                return true;
+            }
+            if (this.props.filter === 'completed') {
+                return todo.completed;
+            }
+            return !todo.completed;
+        })
     };
     
     render() {
         return ( 
-        <div>
+        <div className='app-wrapper'>
             <Header />   
-            <NewTodo />
-            {/* <NewTodo addTodo={ this.addTodo }/> */}
-            <TodoList />
-            {/* <TodoList 
-            changeCompleted={ this.changeCompleted } 
-            deleteTodo={ this.deleteTodo } 
-            todos={ this.state.todos }/>  */}
             <Filter />
+            <NewTodo />
+            <TodoList todos={ this.filteredTodos() } />
+            
         </div>
         )
     }
@@ -76,12 +37,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        todos: state.todos
+        todos: state.todoReducer.todos,
+        filter: state.todoReducer.filter
     }
 }
-
-// const connection = connect(mapStateToProps);
-
-// const ConnectedApp = connection(App);
 
 export default connect(mapStateToProps)(App); 

@@ -2,12 +2,18 @@
     display: flex;
     align-content: flex-start;
     justify-content: center;
-    background-color: rgb(108, 156, 170);
-    box-shadow: 5px 5px 10px;
+    /* background-color: rgb(108, 156, 170);
+    box-shadow: 5px 5px 10px; */
     height: 120px;
     align-items: center;
-    color: rgba(104, 115, 124, 0.822);
+    color: whitesmoke;
     border-radius: 10px;
+}
+
+.header-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
 }
 
 

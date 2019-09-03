@@ -1,0 +1,7 @@
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* //background-color: #98cdcd; */
+    background-image: linear-gradient(199deg, #98cdcd, 	#cbe6e6);
+    height: 100vh;
+}

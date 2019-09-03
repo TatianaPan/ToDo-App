@@ -1,0 +1,13 @@
+.filter-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 8%;
+}
+
+.filter-text {
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: whitesmoke;
+    margin-right: 2%;
+}
