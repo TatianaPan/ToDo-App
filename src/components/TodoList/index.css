@@ -3,5 +3,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    width: 50%;
+    margin: 5% auto 0 auto; 
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 640px) {
+      .list {
+          width: 100%;
+      }
+      .myButton {
+          width: 30%;
+      }
+  }

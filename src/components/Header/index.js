@@ -4,7 +4,9 @@ import './index.css'
 class Header extends Component {
   render() {
     return (
-        <h2 className='header'>My Todo List</h2>
+        <div className='header'>
+          <div className='header-text'>TO DO APP</div>
+        </div>
     );
   }
 }

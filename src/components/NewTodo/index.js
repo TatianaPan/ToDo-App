@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './index.css'
-import {connect} from 'react-redux'
-//import { addTodo } from '../../store/actions'
-//import store from '../../store'
+import { connect } from 'react-redux'
+
 
 class NewTodo extends Component {
     state = {
@@ -15,41 +14,30 @@ class NewTodo extends Component {
             type: 'ADD_TODO',
             payload: this.state.content
         }
-        //console.log(this.state.content);
-        this.props.dispatch(action); 
+
+        this.props.dispatch(action);
         this.setState({ content: '' })
-        // const todos = [...this.state.todos];
-        // const newTodos = todos.concat(newItem);
-        // this.setState({todos: newTodos})
     };
 
     handleNewTodoChange = (e) => {
-        
-        this.setState({ content: e.currentTarget.value });
-        console.log(this.state.content)
-    };
 
-    // addNewTodoHandler = (e) => {
-    //     e.preventDefault();
-    //     this.props.addTodo(this.state);
-    //     this.setState({ content: '' });
-    // };
+        this.setState({ content: e.currentTarget.value });
+    };
 
     render() {
         return (
-            <form className='newTodo'>
-                <input type='text' 
-                placeholder='Todo item' 
-                value={ this.state.content } 
-                onChange={ this.handleNewTodoChange }/>
-                <button className='myButton' onClick={ this.handleAddTodo }>Add new todo</button>
-            </form>
+            <div>
+                <form className='newTodo'>
+                    <input type='text'
+                        placeholder='Add new task'
+                        value={this.state.content}
+                        onChange={this.handleNewTodoChange} 
+                        className='task-input'/>
+                    <button className='myButton' onClick={this.handleAddTodo}>Add</button>
+                </form>
+            </div>
         )
     }
 }
-
-// const connection = connect(null);
-
-// const ConnectedNewTodo = connection(NewTodo);
 
 export default connect()(NewTodo);

@@ -1,3 +1,41 @@
 .TodoItem-completed {
     text-decoration: line-through;
+    background-color: #388186c4;
+    color: whitesmoke;
+}
+
+.todo-card-wrapper {
+    width: 90%;
+    height: 50px;
+    /* margin: 10px auto 5% auto; */
+    
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    background-color: whitesmoke;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    border-radius: 6px;
+    color: #777777;
+    box-shadow:0 0 10px #388186a6;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+li:hover {
+
+}
+
+@media screen and (max-width: 640px) {
+    li {
+        margin-right: 4%;
+    }
 }

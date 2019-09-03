@@ -1,3 +1,20 @@
+## TO DO APP
+
+This project has been done as a study project while learning React/Redux at Full-Stack Development bootcamp.
+
+## Description
+
+* User can add new task
+* User can delete a task
+* User can mark task as completed
+* User can filter tasks
+
+## Screenshots 
+![Alt text](/screen1.png)
+![Alt text](/screen2.png)
+![Alt text](/screen3.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

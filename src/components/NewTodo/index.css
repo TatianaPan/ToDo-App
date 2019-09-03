@@ -1,6 +1,12 @@
 .newTodo {
     display: flex;
-    justify-content: center;
+	justify-content: center;
+	
+}
+
+.task-input {
+	border-radius: 6px;
+	margin-right: 2%;
 }
 
 .myButton {
@@ -22,7 +28,7 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#777777;
-	font-family:Arial;
+	font-family: 'Roboto';
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
