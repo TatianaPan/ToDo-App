@@ -1,4 +1,4 @@
-## TO DO APP
+## TODO APP
 
 This project has been done as a study project while learning React/Redux at Full-Stack Development bootcamp.
 
